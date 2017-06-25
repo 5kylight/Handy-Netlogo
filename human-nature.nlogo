@@ -173,33 +173,13 @@ NIL
 MONITOR
 679
 15
-736
+771
 60
-turtles
-count turtles
+commoners
+count commoners
 17
 1
 11
-
-PLOT
-757
-14
-1280
-453
-Plot
-time
-turtles
-0.0
-10.0
-0.0
-10.0
-true
-true
-"" ""
-PENS
-"total" 1.0 0 -16777216 true "" "plot count turtles"
-"sick" 1.0 0 -2674135 true "" "plot count turtles with [sick?]"
-"healthy" 1.0 0 -13345367 true "" "plot count turtles with [sick? = false]"
 
 SLIDER
 35
@@ -247,23 +227,12 @@ NIL
 HORIZONTAL
 
 MONITOR
-683
-197
-743
-242
-healthy
-count turtles with [sick? = false]
-17
-1
-11
-
-MONITOR
 680
 77
 737
 122
-sick
-count turtles with [sick?]
+Elite
+count elite
 17
 1
 11
@@ -282,17 +251,6 @@ BirthRate
 1
 NIL
 HORIZONTAL
-
-MONITOR
-681
-137
-738
-182
-years
-ticks / 10
-17
-1
-11
 
 SLIDER
 39
@@ -316,6 +274,81 @@ SLIDER
 308
 Weath
 Weath
+0
+100
+50.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+680
+161
+852
+194
+Lambda
+Lambda
+0
+100
+50.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+691
+204
+863
+237
+Gamma
+Gamma
+0
+100
+50.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+693
+263
+865
+296
+Delta
+Delta
+0
+100
+50.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+37
+399
+229
+432
+EliteConsumption
+EliteConsumption
+0
+100
+50.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+43
+458
+279
+491
+CommonersConsumption
+CommonersConsumption
 0
 100
 50.0
