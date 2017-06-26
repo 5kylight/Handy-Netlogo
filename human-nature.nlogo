@@ -75,12 +75,12 @@ end
 
 to kill
   ask elite [
-    if (random 100) < eliteDeathRate [
+    if ((random 100) < eliteDeathRate) [
       die
     ]
   ]
   ask commoners [
-    if (random 100) < commonersDeathRate [
+    if ((random 100) < commonersDeathRate) [
       die
     ]
   ]
@@ -204,9 +204,9 @@ SLIDER
 CommonersCount
 CommonersCount
 0
+1000
+200.0
 100
-100.0
-1
 1
 NIL
 HORIZONTAL
@@ -275,9 +275,9 @@ SLIDER
 Lambda
 Lambda
 0
-100
-100.0
-1
+200
+200.0
+10
 1
 NIL
 HORIZONTAL
@@ -290,9 +290,9 @@ SLIDER
 Gamma
 Gamma
 0
-100
-100.0
 1
+0.01
+0.01
 1
 NIL
 HORIZONTAL
@@ -306,7 +306,7 @@ Delta
 Delta
 0
 100
-0.0
+4.0
 1
 1
 NIL
