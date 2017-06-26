@@ -1,8 +1,6 @@
-globals [commonersDeathRate eliteDeathRate]
+globals [commonersDeathRate eliteDeathRate nature wealth ]
 breed [ commoners commoner ]
 breed [ elite an-elite ] ; TODO, change singular form of elite
-breed [ nature a-nature]
-breed [ wealth a-walth]
 
 turtles-own [
   age
@@ -10,12 +8,13 @@ turtles-own [
 
 to setup
   clear-all
-  set commonersDeathRate 15
-  set eliteDeathRate 10
+  set commonersDeathRate 7
+  set eliteDeathRate 1
 
   setup-elite
   setup-commoners
-  setup-nature
+  set nature 100
+  set wealth 0
   reset-ticks
 end
 
@@ -39,19 +38,13 @@ to setup-commoners
   ]
 end
 
-to setup-nature
-  create-nature StartNature [
-    set color green
-    set size 2  ; easier to see
-    setxy random-xcor random-ycor
-  ]
-end
-
 
 
 to go
   reproduce
   kill
+  update_nature
+  update_wealth
 
   tick
 end
@@ -78,13 +71,6 @@ to reproduce
     ]
   ]
 
-  ask nature [
-   ; ToDo implement nature regeneration
-  ]
-
-  ask weath [
-    ; ToDo implement weath grow
-  ]
 end
 
 to kill
@@ -98,15 +84,14 @@ to kill
       die
     ]
   ]
+end
 
-  ask nature [
-    ;; ToDO implement nature loss
-  ]
+to update_nature
+  set nature ((Gamma * nature)*(Lambda - nature) - (Delta * (count commoners) * nature))
 
-  ask weath [
-    ; ToDo implement weath loss
-  ]
-
+end
+to update_wealth
+  set wealth ((Delta * (count commoners) * nature) - ((count commoners) * CommonersConsumption) - ((count elite) * EliteConsumption))
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -190,22 +175,22 @@ EliteCount
 EliteCount
 0
 100
-0.0
+1.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-31
-309
-203
-342
+18
+337
+190
+370
 HealthyAge
 HealthyAge
 0
 100
-50.0
+12.0
 1
 1
 NIL
@@ -220,7 +205,7 @@ CommonersCount
 CommonersCount
 0
 100
-6.0
+100.0
 1
 1
 NIL
@@ -246,7 +231,7 @@ BirthRate
 BirthRate
 0
 100
-20.0
+4.0
 1
 1
 NIL
@@ -261,22 +246,22 @@ StartNature
 StartNature
 0
 100
-50.0
+19.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-57
-275
-229
-308
+36
+282
+208
+315
 Weath
 Weath
 0
 100
-50.0
+11.0
 1
 1
 NIL
@@ -291,7 +276,7 @@ Lambda
 Lambda
 0
 100
-50.0
+100.0
 1
 1
 NIL
@@ -306,7 +291,7 @@ Gamma
 Gamma
 0
 100
-50.0
+100.0
 1
 1
 NIL
@@ -321,41 +306,63 @@ Delta
 Delta
 0
 100
-50.0
+0.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-37
-399
-229
-432
+9
+389
+201
+422
 EliteConsumption
 EliteConsumption
 0
 100
-50.0
+14.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-43
-458
-279
-491
+12
+452
+248
+485
 CommonersConsumption
 CommonersConsumption
 0
 100
-50.0
+10.0
 1
 1
 NIL
 HORIZONTAL
+
+MONITOR
+322
+506
+489
+551
+nature
+nature
+17
+1
+11
+
+MONITOR
+322
+456
+479
+501
+NIL
+wealth
+17
+1
+11
 
 @#$#@#$#@
 ## WHAT IS IT?
