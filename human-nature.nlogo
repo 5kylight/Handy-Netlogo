@@ -392,8 +392,8 @@ true
 true
 "" ""
 PENS
-"default" 1.0 0 -16777216 true "" "plot nature"
-"pen-1" 1.0 0 -7500403 true "" "plot wealth"
+"nature" 1.0 0 -16777216 true "" "plot nature"
+"wealth" 1.0 0 -7500403 true "" "plot wealth"
 
 SLIDER
 6
