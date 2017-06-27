@@ -190,9 +190,9 @@ NIL
 HORIZONTAL
 
 SLIDER
-33
+14
 115
-231
+212
 148
 CommonersCount
 CommonersCount
@@ -231,10 +231,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-39
-219
-211
-252
+20
+202
+192
+235
 StartNature
 StartNature
 0
@@ -246,10 +246,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-36
-282
-208
-315
+18
+242
+190
+275
 Weath
 Weath
 0
@@ -261,10 +261,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-680
-161
-852
-194
+29
+452
+201
+485
 Lambda
 Lambda
 0
@@ -276,10 +276,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-691
-204
-863
-237
+28
+495
+200
+528
 Gamma
 Gamma
 0
@@ -291,10 +291,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-693
-263
-865
-296
+27
+533
+199
+566
 Delta
 Delta
 0
@@ -306,10 +306,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-19
-339
-211
-372
+17
+281
+209
+314
 EliteConsumption
 EliteConsumption
 0
@@ -321,15 +321,15 @@ NIL
 HORIZONTAL
 
 SLIDER
-22
-402
-258
-435
+14
+318
+205
+351
 CommonersConsumption
 CommonersConsumption
 0
 100
-5.0
+6.0
 1
 1
 NIL
@@ -370,7 +370,7 @@ NIL
 0.0
 10.0
 true
-false
+true
 "" ""
 PENS
 "commoners" 1.0 0 -13840069 true "" "plot count commoners"
@@ -389,17 +389,17 @@ NIL
 0.0
 10.0
 true
-false
+true
 "" ""
 PENS
 "default" 1.0 0 -16777216 true "" "plot nature"
 "pen-1" 1.0 0 -7500403 true "" "plot wealth"
 
 SLIDER
-9
-450
-227
-483
+6
+353
+207
+386
 commonersDeathRate
 commonersDeathRate
 0
@@ -411,15 +411,15 @@ NIL
 HORIZONTAL
 
 SLIDER
-17
-511
-189
-544
+13
+390
+185
+423
 eliteDeathRate
 eliteDeathRate
 0
 100
-1.0
+3.0
 1
 1
 NIL
