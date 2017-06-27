@@ -13,7 +13,7 @@ to setup
 
   setup-elite
   setup-commoners
-  set nature 100
+  set nature 100.0
   set wealth 0
   reset-ticks
 end
@@ -87,8 +87,16 @@ to kill
 end
 
 to update_nature
-  set nature ((Gamma * nature)*(Lambda - nature) - (Delta * (count commoners) * nature))
-
+  ifelse (nature <= 0) [
+    set nature 1
+  ]
+  [
+    let multiplier (Gamma * (Lambda - nature) - (Delta * (count commoners)))
+    if (multiplier < 0) [
+      set multiplier 0.1
+    ]
+    set nature (nature * multiplier)
+  ]
 end
 to update_wealth
   set wealth ((Delta * (count commoners) * nature) - ((count commoners) * CommonersConsumption) - ((count elite) * EliteConsumption))
@@ -175,7 +183,7 @@ EliteCount
 EliteCount
 0
 100
-1.0
+2.0
 1
 1
 NIL
@@ -205,7 +213,7 @@ CommonersCount
 CommonersCount
 0
 1000
-200.0
+100.0
 100
 1
 NIL
@@ -246,7 +254,7 @@ StartNature
 StartNature
 0
 100
-19.0
+6.0
 1
 1
 NIL
@@ -276,7 +284,7 @@ Lambda
 Lambda
 0
 200
-200.0
+150.0
 10
 1
 NIL
@@ -291,7 +299,7 @@ Gamma
 Gamma
 0
 1
-0.01
+0.22
 0.01
 1
 NIL
@@ -305,9 +313,9 @@ SLIDER
 Delta
 Delta
 0
-100
-4.0
 1
+0.11
+0.01
 1
 NIL
 HORIZONTAL
@@ -343,10 +351,10 @@ NIL
 HORIZONTAL
 
 MONITOR
-322
-506
-489
-551
+699
+327
+866
+372
 nature
 nature
 17
@@ -354,10 +362,10 @@ nature
 11
 
 MONITOR
-322
-456
-479
-501
+699
+393
+856
+438
 NIL
 wealth
 17
