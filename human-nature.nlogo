@@ -1,4 +1,4 @@
-globals [commonersDeathRate eliteDeathRate nature wealth ]
+globals [nature wealth ]
 breed [ commoners commoner ]
 breed [ elite an-elite ] ; TODO, change singular form of elite
 
@@ -8,12 +8,12 @@ turtles-own [
 
 to setup
   clear-all
-  set commonersDeathRate 7
+  set commonersDeathRate 5
   set eliteDeathRate 1
 
   setup-elite
   setup-commoners
-  set nature 100.0
+  set nature startNature
   set wealth 0
   reset-ticks
 end
@@ -183,22 +183,7 @@ EliteCount
 EliteCount
 0
 100
-2.0
-1
-1
-NIL
-HORIZONTAL
-
-SLIDER
-18
-337
-190
-370
-HealthyAge
-HealthyAge
-0
-100
-12.0
+1.0
 1
 1
 NIL
@@ -213,7 +198,7 @@ CommonersCount
 CommonersCount
 0
 1000
-100.0
+200.0
 100
 1
 NIL
@@ -239,7 +224,7 @@ BirthRate
 BirthRate
 0
 100
-4.0
+7.0
 1
 1
 NIL
@@ -254,7 +239,7 @@ StartNature
 StartNature
 0
 100
-6.0
+100.0
 1
 1
 NIL
@@ -269,7 +254,7 @@ Weath
 Weath
 0
 100
-11.0
+0.0
 1
 1
 NIL
@@ -284,7 +269,7 @@ Lambda
 Lambda
 0
 200
-150.0
+200.0
 10
 1
 NIL
@@ -299,7 +284,7 @@ Gamma
 Gamma
 0
 1
-0.22
+1.0
 0.01
 1
 NIL
@@ -314,37 +299,37 @@ Delta
 Delta
 0
 1
-0.11
+0.08
 0.01
 1
 NIL
 HORIZONTAL
 
 SLIDER
-9
-389
-201
-422
+19
+339
+211
+372
 EliteConsumption
 EliteConsumption
 0
 100
-14.0
+100.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-12
-452
-248
-485
+22
+402
+258
+435
 CommonersConsumption
 CommonersConsumption
 0
 100
-10.0
+5.0
 1
 1
 NIL
@@ -371,6 +356,74 @@ wealth
 17
 1
 11
+
+PLOT
+41
+591
+405
+741
+Commoners vs Elite number
+NIL
+NIL
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"commoners" 1.0 0 -13840069 true "" "plot count commoners"
+"elite" 1.0 0 -16710651 true "" "plot count elite"
+
+PLOT
+478
+600
+848
+750
+Wealth vs Nature 
+NIL
+NIL
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -16777216 true "" "plot nature"
+"pen-1" 1.0 0 -7500403 true "" "plot wealth"
+
+SLIDER
+9
+450
+227
+483
+commonersDeathRate
+commonersDeathRate
+0
+100
+5.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+17
+511
+189
+544
+eliteDeathRate
+eliteDeathRate
+0
+100
+1.0
+1
+1
+NIL
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?
